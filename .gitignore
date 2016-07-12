@@ -45,11 +45,11 @@ $RECYCLE.BIN/
 Network Trash Folder
 Temporary Items
 .apdisk
-Main/bin/
-Main/obj/
-Lesson01-01/bin/
-Lesson01-01/obj/
-Lesson02-01/bin/
-Lesson02-01/obj/
-Lesson02-02/bin/
-Lesson02-02/obj/
+Main/bin/*
+Main/obj/*
+/Lesson01-01/bin/*
+/Lesson01-01/obj/*
+/Lesson02-01/bin/*
+/Lesson02-01/obj/*
+/Lesson02-02/bin/*
+/Lesson02-02/obj/*
