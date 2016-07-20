@@ -21,8 +21,40 @@ namespace AdditionalTaskB2
     /// </summary>
     class Program
     {
+        static double MethodF(ref double arg1, ref double arg2, out bool arg3)
+        {
+            if (arg1 > arg2)
+            {
+                arg3 = true;
+                return arg1 * arg2;
+            }
+            if (arg1 < arg2)
+            {
+                arg3 = false;
+                return arg2 / arg1;
+            }
+            else
+            {
+                arg3 = true;
+                return Math.Pow(arg1, 2);
+            }
+        }
         static void Main(string[] args)
         {
+            double var1 = 10;
+            double var2 = 5;
+            bool var3 = true;
+            Console.WriteLine("1: {0} and arg3: {1} ", MethodF(ref var1, ref var2, out var3), var3);
+            var1 = 5;
+            var2 = 10;
+            Console.WriteLine("2: {0} and arg3: {1}", MethodF(ref var1, ref var2, out var3), var3);
+            var1 = 10;
+            var2 = 10;
+            Console.WriteLine("3: {0} and arg3: {1}", MethodF(ref var1, ref var2, out var3), var3);
+            Console.ReadKey();
+
         }
+
+
     }
 }
