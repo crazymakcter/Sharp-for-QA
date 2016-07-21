@@ -51,12 +51,12 @@ namespace AdditionalTaskB1
             Console.WriteLine("Argument 2 - {0}", argum2);
             Console.WriteLine("Add: ");
             Console.WriteLine(Calc(OperationType.Add, argum1, argum2));
+            Console.WriteLine("Subtract: ");
+            Console.WriteLine(Calc(OperationType.Subtract, argum1, argum2));
             Console.WriteLine("Division: ");
             Console.WriteLine(Calc(OperationType.Division, argum1, argum2));
             Console.WriteLine("Multiply: ");
             Console.WriteLine(Calc(OperationType.Multiply, argum1, argum2));
-            Console.WriteLine("Subtract: ");
-            Console.WriteLine(Calc(OperationType.Subtract, argum1, argum2));
             Console.ReadKey();
         }
     }
