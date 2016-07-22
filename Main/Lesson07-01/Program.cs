@@ -18,7 +18,7 @@ namespace Lessom07_01
             public int speed{get;set;}
             public int petrol{get;set;}
             protected int fuelConsumptionPerMile;
-            public double Move(int range)
+            virtual public double Move(int range)
             {
                 return range / speed;
             }
@@ -49,9 +49,13 @@ namespace Lessom07_01
         {
             SportCar car = new SportCar();
             
+            car.Turbo = false;
+            car.speed = 120;
+            Console.Write("Turbo=fale, Car spend {0} on {1} km \n", car.Move(500), car.speed);
             car.Turbo = true;
-            
-            Console.Write(car.Move(500));
+            car.speed = 120;
+            Console.Write("Turbo=true, Car spend {0} on {1} km \n", car.Move(500), car.speed);
+            Console.ReadKey();
         }
     }
 }
