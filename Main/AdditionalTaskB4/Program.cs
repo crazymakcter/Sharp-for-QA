@@ -12,7 +12,7 @@ namespace AdditionalTaskB4
     /// </summary>
     class Program
     {
-        static public int [] CreateRandomArray(int size)
+        static int [] CreateRandomArray(int size)
         {
             int [] array = new int[size];
             Random rand = new Random();
@@ -27,7 +27,8 @@ namespace AdditionalTaskB4
             Console.WriteLine(" ");
             return array;
         }
-        static public void SearchMaxAndMinElementInArray(int[] unsortarray)
+
+        static void SearchMaxAndMinElementInArray(int[] unsortarray)
         {
             int min_index=0;
             int max_index=0;
