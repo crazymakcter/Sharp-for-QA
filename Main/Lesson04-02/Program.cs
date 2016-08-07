@@ -17,6 +17,14 @@ namespace Lesson04_02
     /// </summary>
     class Program
     {
+        public int Method1()
+        {
+            const int sizeOfArray = 10;
+            int Array[];
+
+
+            return 0;
+        }
         static void Main(string[] args)
         {
         }

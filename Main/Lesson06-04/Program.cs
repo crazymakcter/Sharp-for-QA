@@ -18,34 +18,34 @@ namespace Lesson06_04
     {
       Console.WriteLine("Create array [10,10]");
       int[,] array = new int[10, 10];
-      int n;
+      int numberOfElementsInDiagonal;
       int lend = 10;
-      for (int i = lend-1; i != 0; --i)
+      for (int indexInLine = lend-1; indexInLine != 0; --indexInLine)
       {
-        for (int j = 0; j < lend; ++j)
+        for (int indexInColumn = 0; indexInColumn < lend; ++indexInColumn)
         {
-          n = (i + j + 1); // считаем число элементов в диагонали, которой принадлежит элемент array[i][j]
-          if (n > lend) // если условие выполняется, то элемент array[i][j] находится под главной диагональю
+          numberOfElementsInDiagonal = (indexInLine + indexInColumn + 1); // считаем число элементов в диагонали, которой принадлежит элемент array[i][j]
+          if (numberOfElementsInDiagonal > lend) // если условие выполняется, то элемент array[i][j] находится под главной диагональю
           {
-            n = 2 * lend - (i + j + 1); // правильно пересчитываем число элементов в диагонали
-            array[i,j] = j + (lend - 1) * (lend - 2) / 2 - n * (n - 1) / 2 + 10 * (10 + 1) / 2;
-            /*
-              j - номер элемента в диагонали
-              (s - 1)*(s - 2) / 2 - n*(n - 1) / 2 - количество элементов между главной диагональю и текущей диагональю
-              s*(s + 1) / 2 - количество элементов от первого элемента до главной диагонали включительно
-              (верхний треугольник, у которого гипотенуза идёт по главной диагонали матрицы). Для s = 9 будет 45
-            */
+            numberOfElementsInDiagonal = 2 * lend - (indexInLine + indexInColumn + 1); // правильно пересчитываем число элементов в диагонали
+            array[indexInLine,indexInColumn] = indexInColumn + (lend - 1) * (lend - 2) / 2 - numberOfElementsInDiagonal * (numberOfElementsInDiagonal - 1) / 2 + 10 * (10 + 1) / 2;
+              /*
+                j - номер элемента в диагонали
+                (s - 1)*(s - 2) / 2 - numberOfElementsInDiagonal*(numberOfElementsInDiagonal - 1) / 2 - количество элементов между главной диагональю и текущей диагональю
+                s*(s + 1) / 2 - количество элементов от первого элемента до главной диагонали включительно
+                (верхний треугольник, у которого гипотенуза идёт по главной диагонали матрицы). Для s = 9 будет 45
+              */
           }
           else
           {
-            array[i,j] = n - i + n * (n - 1) / 2;
-            /*
-              n - i - номер элемента в диагонали
-              n*(n - 1) / 2 - количество элементов между первым элементом(диагональю из первого элемента) и текущей диагональю
-            */
+            array[indexInLine,indexInColumn] = numberOfElementsInDiagonal - indexInLine + numberOfElementsInDiagonal * (numberOfElementsInDiagonal - 1) / 2;
+              /*
+                numberOfElementsInDiagonal - i - номер элемента в диагонали
+                numberOfElementsInDiagonal*(numberOfElementsInDiagonal - 1) / 2 - количество элементов между первым элементом(диагональю из первого элемента) и текущей диагональю
+              */
           }
 
-          Console.Write(" {0}", array[i,j]);
+          Console.Write(" {0}", array[indexInLine,indexInColumn]);
         }
         Console.WriteLine("\n");
       }
