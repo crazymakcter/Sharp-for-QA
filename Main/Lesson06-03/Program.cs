@@ -14,15 +14,16 @@ namespace Lesson06_03
     /// </summary>
     class Program
     {
-        
+        public const int sizeOfArray = 10;
         static public int[,] CreateAndFillArray()
         {
             Random rand_val = new Random();
             Console.WriteLine("Create array [10,10] with random value");
-            int[,] array = new int[10,10];
-            for(int i = 0;  i < 10; i++)
+            
+            int[,] array = new int[sizeOfArray, sizeOfArray];
+            for (int i = 0; i < sizeOfArray; i++)
             {
-                for(int j = 0; j < 10; j++)
+                for (int j = 0; j < sizeOfArray; j++)
                 {
                     array[i, j] = rand_val.Next(0, 100);
                     Console.Write(array[i,j] + "\t");
@@ -36,9 +37,9 @@ namespace Lesson06_03
         static public void FoundSummDiagonalsArray(int[,] array_summ)
         {
             int summ = 0;
-            for(int i = 0;  i < 10; i++)
+            for (int i = 0; i < sizeOfArray; i++)
             {
-                for(int j = 0; j < 10; j++)
+                for (int j = 0; j < sizeOfArray; j++)
                 {
                     if ((i == j))
                     {

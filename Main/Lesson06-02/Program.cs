@@ -44,7 +44,7 @@ namespace Lesson06_02
             }
             catch
             {
-
+                Console.WriteLine("String incorrect, please inpute correct string");
             }
             Console.ReadKey();
 

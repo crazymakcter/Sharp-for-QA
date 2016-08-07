@@ -28,26 +28,32 @@ namespace Lessom07_01
               
             }
 
-            public virtual bool DistanceToStopCar(int distance, bool turbo)
-          {
-              if (turbo == true)
-              {
-                turboBoost = 0.5;
-              }
-              else
-              {
-                turboBoost = 0.0;
-              }
+            public virtual void PetrolConversion(double fuelConsumptionPerMile, double distance)
+            {
+            }
 
-            if (distance > (petrolTank*fuelConsumptionPerMile*turboBoost))
+            public virtual bool DistanceToStopCar(double distance, bool turbo)
             {
-              return false;
+                  if (turbo == true)
+                  {
+                    turboBoost = 0.5;
+                  }
+                  else
+                  {
+                    turboBoost = 0.0;
+                  }
+                  double distanceActual = petrolTank * fuelConsumptionPerMile * turboBoost;
+                if (distance > distanceActual)
+                {
+                   
+                  return false;
+                }
+                else
+                {
+                  PetrolConversion(fuelConsumptionPerMile, distance);
+                  return true;
+                }
             }
-            else
-            {
-              return true;
-            }
-          }
 
 
         }
@@ -55,7 +61,7 @@ namespace Lessom07_01
         class SportCar : Transport
         {
             private double petrolTank = 43.0;
-            private double petrol = 0.0;
+            public double petrol = 0.0;
             public bool Turbo;
             private double time = 0;
             private double fuelConsumptionPerMile = 8.00;
@@ -100,11 +106,11 @@ namespace Lessom07_01
             }
             else
             {
-              petrolTank = petrol + size;
+              petrol = petrol + size;
             }
           }
 
-          public override bool DistanceToStopCar(int distance, bool turbo)
+          public override bool DistanceToStopCar(double distance, bool turbo)
           {
             double res = 0.0;
             if (turbo == true)
@@ -116,15 +122,21 @@ namespace Lessom07_01
               turboBoost = 1.0;
             }
 
-            res = (petrolTank*fuelConsumptionPerMile)*turboBoost;
+            res = (petrol*fuelConsumptionPerMile)*turboBoost;
             if (distance > res)
             {
               return false;
             }
             else
             {
+               PetrolConversion(fuelConsumptionPerMile, distance);
               return true;
             }
+          }
+
+          public override void PetrolConversion(double fuelConsumptionPerMile, double distance)
+          {
+              petrol -= (fuelConsumptionPerMile * distance) / (100 * turboBoost);
           }
         }
 
@@ -135,10 +147,10 @@ namespace Lessom07_01
             car.AddPetrol(42);
             car.Turbo = false;
             car.speed = 120;
-            Console.Write("Turbo=false, Car spend {0} on {1} km \n", car.Move(200), car.speed);
+            Console.Write("100 km: Turbo=false, Car spend {0} hour(s) - {1} km/h, {2} fuel in tank \n", car.Move(100), car.speed, car.petrol);
             car.Turbo = true;
-            car.speed = 120;
-            Console.Write("Turbo=true, Car spend {0} on {1} km \n", car.Move(200), car.speed);
+            car.speed = 70;
+            Console.Write("150 km: Turbo=true, Car spend {0} - {1} km/h, {2} fuel in tank \n", car.Move(135), car.speed, car.petrol);
             Console.ReadKey();
         }
     }

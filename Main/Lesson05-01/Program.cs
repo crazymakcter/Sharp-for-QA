@@ -21,7 +21,7 @@ namespace Lesson05_01
         {
             Random rand = new Random();
             int[] randomarray = new int[size];
-            for (int index = 0; index < 20; index++)
+            for (int index = 0; index < randomarray.Length; index++)
             {
                 randomarray[index] = rand.Next(0, 100);
             }
@@ -29,11 +29,13 @@ namespace Lesson05_01
         }
         static void Main(string[] args)
         {
-            int[] array_1 = CreateRandomaArray(20);
-            int[] array_2 = CreateRandomaArray(20);
+            const int sizeOfArray20 = 20;
+            const int sizeOfArray40 = 40;
+            int[] array_1 = CreateRandomaArray(sizeOfArray20);
+            int[] array_2 = CreateRandomaArray(sizeOfArray20);
             int[] array_3 = new int[40];
             int temp_index = 0;
-            for (int y = 0; temp_index < 40 && y < 20; y += 2)
+            for (int y = 0; temp_index < sizeOfArray40 && y < sizeOfArray20; y += 2)
             {
 
                 array_3[temp_index] = array_1[y];

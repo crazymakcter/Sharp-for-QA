@@ -16,17 +16,19 @@ namespace Lesson03_02
     /// </summary>
     class Program
     {
+        
         static void Main(string[] args)
         {
+            const int sizeOfArray = 4;
             int sum = 0;
-            int[][] arr = new int[4][];
-            for (int i = 0; i < 4; ++i)
+            int[][] arr = new int[sizeOfArray][];
+            for (int i = 0; i < sizeOfArray; ++i)
             {
-                arr[i] = new int[4];
+                arr[i] = new int[sizeOfArray];
                 if (i % 2 < 0)
                 {
 
-                    for (int y = 0; y < 4; ++y)
+                    for (int y = 0; y < sizeOfArray; ++y)
                     {
 
                         arr[i][y] = sum;
@@ -47,9 +49,9 @@ namespace Lesson03_02
 
             }
 
-            for (int a = 0; a < 4; a++)
+            for (int a = 0; a < sizeOfArray; a++)
             {
-                for (int b = 0; b < 4; b++)
+                for (int b = 0; b < sizeOfArray; b++)
                 {
                     Console.WriteLine(arr[a][b] + "  ");
 

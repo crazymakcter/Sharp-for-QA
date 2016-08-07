@@ -21,12 +21,10 @@ namespace Lesson06_01
             string user_str = Console.ReadLine();
             try
             {
-                string[] arr_string;
-                arr_string = user_str.Split(';');
-                int Len = arr_string.Length;
-                int[] arr_int = new int[Len];
+                string[] arr_string = user_str.Split(';');
+                int[] arr_int = new int[arr_string.Length];
                 int current;
-                for (int a = 0; a < Len; a++)
+                for (int a = 0; a < arr_string.Length; a++)
                 {
 
                     if (Int32.TryParse(arr_string[a], out current))

@@ -20,8 +20,8 @@ namespace Lesson04_01
     {
         static void Main(string[] args)
         {
-            int row = 5;
-            int col = 6;
+            const int row = 5;
+            const int col = 6;
             int min = 0;
             int max = 0;
             int[][] arr = new int[row][];
