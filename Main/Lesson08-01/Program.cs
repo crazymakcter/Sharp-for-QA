@@ -35,7 +35,7 @@ namespace Lesson08_01
     {
         static void Main(string[] args)
         {
-            var second = new Second();
+            var second = new Second(100);
         }
     }
 }

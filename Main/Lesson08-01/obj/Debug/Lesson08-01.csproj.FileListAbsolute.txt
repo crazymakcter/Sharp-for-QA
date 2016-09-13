@@ -1,6 +1,5 @@
 C:\Users\Maksym\Documents\Visual Studio 2013\Projects\Sharp-for-QA\Main\Lesson08-01\bin\Debug\Lesson08-01.exe.config
 C:\Users\Maksym\Documents\Visual Studio 2013\Projects\Sharp-for-QA\Main\Lesson08-01\bin\Debug\Lesson08-01.exe
 C:\Users\Maksym\Documents\Visual Studio 2013\Projects\Sharp-for-QA\Main\Lesson08-01\bin\Debug\Lesson08-01.pdb
-C:\Users\Maksym\Documents\Visual Studio 2013\Projects\Sharp-for-QA\Main\Lesson08-01\obj\Debug\Lesson08-01.csprojResolveAssemblyReference.cache
 C:\Users\Maksym\Documents\Visual Studio 2013\Projects\Sharp-for-QA\Main\Lesson08-01\obj\Debug\Lesson08-01.exe
 C:\Users\Maksym\Documents\Visual Studio 2013\Projects\Sharp-for-QA\Main\Lesson08-01\obj\Debug\Lesson08-01.pdb
